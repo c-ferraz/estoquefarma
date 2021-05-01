@@ -1,0 +1,45 @@
+.bd{
+    background-image: url("https://guiadafarmacia.com.br/wp-content/uploads/2020/01/shutterstock_1431588173.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+
+.top{
+    background-image: linear-gradient(to right,#ffffff, #148dff , #ffffff);
+    border-radius: 15px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: cornsilk;
+    margin-left: 20px;
+    text-align: center;
+}
+#input1 {
+    margin-top: 40px;
+    background-color: #ffffff;
+    border-radius: 40px;
+    text-align: center;
+    height: 40px;
+    margin-left: 200px;
+    width: 250px;
+   }
+   #input2 {
+    background-color: #ffffff;
+    border-radius: 40px;
+    text-align: center;
+    height: 40px;
+    margin-left: 200px;
+    width: 250px;
+   }
+   #button1{
+    border-radius: 30px;
+    background-color: #F6F5FA;
+    color: #8485A3;
+    margin-left:210px;
+    height: 40px;
+    width: 100px;
+}
+.cadastrar{
+    margin-left: 210px;
+}

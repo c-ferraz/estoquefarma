@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/inicialstyle.css' %}" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=7, initial-scale=1.0">
+    <script>
+        var csrftoken = '{{ csrf_token }}'
+    </script>
+    <title>ESTOQUEFARMA +</title>
+</head>
+<body class="bd">
+    <script src="{% static 'js/script.js' %}"></script>
+    <h1 class="top">ESTOQUEFARMA +</h1>
+    <nav class="navbar">
+    <button class="button" onclick="cadastrar()" style="vertical-align:middle" ><span> Cadastrar  </span></button>
+    <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
+    <button class="button" style="vertical-align:middle" ><span> Desalocar</span></button>
+    <button class="button" style="vertical-align:middle" ><span>Consultar</arpan></button>
+    <button class="button" style="vertical-align:middle" ><span>Atualizar </sparrn></button>
+    </nav>
+
+    <div id="conteudo" style="display: none"></div>
+
+</body>
+</html>
+
