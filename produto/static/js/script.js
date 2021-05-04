@@ -45,7 +45,7 @@ function cadastrar(){
     conteudo.style.display='block';
     conteudo.innerHTML=`
     <form action="cadastrar_produto" method="POST">
-    <input type='hidden' name='csrfmiddlewaretoken' value=  csrftoken  />
+    <input type='hidden' id="csrfmiddlewaretoken" name='csrfmiddlewaretoken' value=""/>
     <div class="inputCadastro" id="">
     <label>Nome do Produto: </label>
     <input type="text"  name="nomeProduto"/>
@@ -63,6 +63,7 @@ function cadastrar(){
     </div>
     </form>
     `;
+    document.getElementById("csrfmiddlewaretoken").value = csrftoken;
     
     
 }
