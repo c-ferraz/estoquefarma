@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/inicialstyle.css' %}" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=7, initial-scale=1.0">
+    <script>
+        var csrftoken = '{{ csrf_token }}'
+    </script>
+    <title>ESTOQUEFARMA +</title>
+</head>
+<body class="bd">
+    <script src="{% static 'js/script.js' %}"></script>
+    <h1 class="top">ESTOQUEFARMA +</h1>
+    <nav class="navbar">
+    <button class="button" onclick="location.href='cadastro'" style="vertical-align:middle" ><span> Cadastrar  </span></button>
+    <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
+    <button class="button" style="vertical-align:middle" ><span> Desalocar</span></button>
+    <button class="button" style="vertical-align:middle" ><span>Consultar</span></button>
+    <button class="button" style="vertical-align:middle" ><span>Atualizar </span></button>
+    </nav>
+
+{% for produto in produtos %}
+
+    <form action="http://{{request.get_host}}/produto/editar_dados_produto" method="POST">
+
+        {% csrf_token %}
+        <input type="hidden" name='product_id' value='{{produto.codigo_de_barras}}'>
+
+        <div class="inputCadastro">
+
+            <div class="inputCadastro"></div>
+            <label>Nome:</label>
+            <input type="text" name="nomeProduto" value="{{produto.nome_do_produto}}"/>
+            </div>
+
+            <div class="inputCadastro">
+            <label>Codigo de Barra:</label>
+            <input type="text" name="codBarraProduto" value="{{produto.codigo_de_barras}}"/>
+            </div>
+
+            <div class="inputCadastro">
+            <label>Lote:</label>
+            <input type="number" name="loteProduto" value="{{produto.lote}}"/>
+            </div>
+
+            <div class="inputCadastro">
+            <label>Ativo:</label>
+            {% if produto.ativo %}
+            <input type="checkbox" name="ativoProduto" checked/>
+            {% else %}
+            <input type="checkbox" name="ativoProduto"/>
+            {% endif %}
+            </div>
+
+            <input type="submit" value="Editar">           
+
+        </div>
+    </form>
+
+{% endfor %}
+
+<!-- <form action="" method="POST">
+        
+        </div>
+        <div class="inputCadastro">
+        <a href="inicial.html"><button type="button" >Alocar</button></a>
+        </div> -->
