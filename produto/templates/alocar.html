@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="{% static 'css/inicialstyle.css' %}" type="text/css" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=7, initial-scale=1.0">
+    <script>
+        var csrftoken = '{{ csrf_token }}'
+    </script>
+    <title>Alocar</title>
+</head>
+
+<body class="bd">
+    <script src="{% static 'js/script.js' %}"></script>
+    <h1 class="top">ESTOQUEFARMA +</h1>
+    <nav class="navbar">
+        <button class="button" onclick="cadastrar()" style="vertical-align:middle"><span> Cadastrar </span></button>
+        <button class="button" onclick="location.href = 'alocar'" style="vertical-align:middle"><span>
+                Alocar</span></button>
+        <button class="button" style="vertical-align:middle"><span> Desalocar</span></button>
+        <button class="button" style="vertical-align:middle"><span>Consultar</span></button>
+        <button class="button" style="vertical-align:middle"><span>Atualizar </span></button>
+    </nav>
+
+    <div  style="display: none"></div>
+    <form id="conteudo" action="" method="POST">
+        <div class="inputCadastro" id="">
+            <label>Codigo de Barra: </label>
+            <input type="text" name="nomeProduto" />
+        </div>
+        <div class="inputCadastro">
+            <label>Local: </label>
+            <input type="number" name="codBarraProduto" />
+        </div>
+        <div class="inputCadastro">
+            <label>Quantidade: </label>
+            <input type="number" name="loteProduto" />
+        </div>
+        <div class="inputCadastro">
+            <label>Validade: </label>
+            <input type="number" name="loteProduto" />
+        </div>
+        <div class="inputCadastro">
+            <a href="inicial.html"><button type="button">Alocar</button></a>
+        </div>
+    </form>
+</body>
+
+</html>

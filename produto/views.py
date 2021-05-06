@@ -42,3 +42,8 @@ def cadastrar_produto(request):
         produto.save()
 
         return render(request, 'inicial.html')
+
+def alocar(request):
+
+    return render(request, 'alocar.html')
+
