@@ -11,18 +11,30 @@
     </script>
     <title>ESTOQUEFARMA +</title>
 </head>
-<body class="bd">
+<body class="bd" onload="menuPrincipal()">
     <script src="{% static 'js/script.js' %}"></script>
-    <h1 class="top">ESTOQUEFARMA +</h1>
-    <nav class="navbar">
-        <button class="button" onclick="location.href='cadastro'" style="vertical-align:middle" ><span> Cadastrar  </span></button>
-        <button class="button" onclick="location.href='alocar'" style="vertical-align:middle" ><span> Alocar</span></button>
-        <button class="button" onclick="location.href='desalocar'" style="vertical-align:middle" ><span> Desalocar</span></button>
-        <button class="button" onclick="location.href='consultar'" style="vertical-align:middle" ><span>Consultar</span></button>
-        <button class="button" onclick="location.href='atualizar'" style="vertical-align:middle" ><span>Atualizar </span></button>
-    </nav>
+    <div id="menu_principal" style="display: none"></div>
 
-    <div id="conteudo" style="display: none"></div>
+    <table>
+        <tr>
+            <th>Cod. Barras:</th>
+            <th>Nome:</th>
+            <th>Local:</th>
+            <th>Quantidade:</th>
+            <th>Validade:</th>
+        </tr>
+        {% for alocacao in estoque %}
+        <tr>
+            <td>{{alocacao.codigo_de_barras.codigo_de_barras}}</td>
+            <td>{{alocacao.codigo_de_barras.nome_do_produto}}</td>
+            <td>{{alocacao.pratileira}}</td>
+            <td>{{alocacao.quantidade}}</td>
+            <td>{{alocacao.dt_validade}}</td>
+            <td><a href="editar_estoque/{{alocacao.id}}">Editar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
 
 </body>
 </html>

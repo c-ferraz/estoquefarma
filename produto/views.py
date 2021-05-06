@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import request, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from rest_framework import status
 import json
 
@@ -19,24 +19,25 @@ def login(request):
     return render(request, 'index.html')
 
 
-
 def inicio(request):
     return render(request, 'inicial.html')
+
 
 def index(request):
     return render(request, 'index.html')
 
+
 def cadastro(request):
     return render(request, 'cadastro.html')
+
 
 def alocar(request):
     return render(request, 'alocar.html')
 
-def desalocar(request):
-    return render(request, 'desalocar.html')
 
 def consultar(request):
     return render(request, 'consultar.html')
+
 
 def atualizar(request):
     return render(request, 'atualizar.html')
@@ -59,6 +60,7 @@ def cadastrar_produto(request):
         }
 
         return render(request, 'cadastro.html', contexto)
+
 
 def alocar_produto(request):
     if (request.method == 'POST'):
@@ -88,11 +90,6 @@ def alocar_produto(request):
 
     return render(request, 'alocar.html', contexto)
 
-def consultar_produto(request):
-
-
-    pass
-
 
 def consultar_produto(request):
 
@@ -104,6 +101,7 @@ def consultar_produto(request):
 
     return render(request, 'consultar.html', contexto)
 
+
 def editar(request, product_id):
 
     if request.method == 'GET':
@@ -111,7 +109,9 @@ def editar(request, product_id):
         contexto = {
             'produtos': produtos
         }
+
     return render(request, 'editar.html', contexto)
+
 
 def editar_dados_produto(request):
 
@@ -130,4 +130,37 @@ def editar_dados_produto(request):
         produto = Produto.objects.filter(codigo_de_barras=product_id)
         produto.update(nome_do_produto=nome_do_produto, codigo_de_barras=codigo_de_barras, lote=lote, ativo=ativo)
 
-    return HttpResponseRedirect('/produto/inicio')
+    return HttpResponseRedirect('/produto/consultar')
+
+
+def desalocar(request):
+
+    estoque = Estoque.objects.all()
+
+    contexto = {
+        "estoque": estoque
+    }
+    return render(request, 'desalocar.html', contexto)
+
+
+def editar_estoque(request, estoque_id):
+    if request.method == 'GET':
+        estoque = Estoque.objects.filter(id=estoque_id)
+
+        contexto = {
+            "estoque": estoque
+        }
+    return render(request, 'editar_estoque.html', contexto)
+
+
+def desalocar_produto(request):
+    if request.method == 'POST':
+        local = request.POST.get('localEstoque')
+        quantidade = request.POST.get('quantidadeEstoque')
+        validade = request.POST.get('validadeEstoque')
+        estoque_id = request.POST.get('estoque_id')
+
+        estoque = Estoque.objects.filter(id=estoque_id)
+        estoque.update(pratileira=local, quantidade=quantidade, dt_validade=validade)
+
+    return HttpResponseRedirect('/produto/desalocar')

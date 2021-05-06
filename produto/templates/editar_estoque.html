@@ -22,41 +22,41 @@
     <button class="button" onclick="location.href='http://{{request.get_host}}/produto/inicio'" style="vertical-align:middle" ><span>Inicio </span></button>
     </nav>
 
-{% for produto in produtos %}
+{% for alocacao in estoque %}
 
-    <form id="conteudo" action="http://{{request.get_host}}/produto/editar_dados_produto" method="POST">
+    <form id="conteudo" action="http://{{request.get_host}}/produto/desalocar_produto" method="POST">
 
         {% csrf_token %}
-        <input type="hidden" name='product_id' value='{{produto.codigo_de_barras}}'>
+        <input type="hidden" name='estoque_id' value='{{alocacao.id}}'>
 
         <div class="inputCadastro">
 
             <div class="inputCadastro"></div>
                 <label>Nome:</label>
-                <input type="text" name="nomeProduto" value="{{produto.nome_do_produto}}"/>
+                <input type="text" name="nomeProduto" disabled value="{{alocacao.codigo_de_barras.nome_do_produto}}"/>
             </div>
 
             <div class="inputCadastro">
                 <label>Codigo de Barras:</label>
-                <input type="text" name="codBarra" value="{{produto.codigo_de_barras}}" disabled/>
-                <input type="hidden" name="codBarraProduto" value="{{produto.codigo_de_barras}}"/>
+                <input type="text" name="codBarra" value="{{alocacao.codigo_de_barras.codigo_de_barras}}" disabled/>
             </div>
 
             <div class="inputCadastro">
-                <label>Lote:</label>
-                <input type="number" name="loteProduto" value="{{produto.lote}}"/>
+                <label>Local:</label>
+                <input type="number" name="localEstoque" value="{{alocacao.pratileira}}"/>
             </div>
 
             <div class="inputCadastro">
-            <label>Ativo:</label>
-            {% if produto.ativo %}
-                <input type="checkbox" name="ativoProduto" checked/>
-            {% else %}
-                <input type="checkbox" name="ativoProduto"/>
-            {% endif %}
+                <label>Quantidade:</label>
+                <input type="number" name="quantidadeEstoque" value="{{alocacao.quantidade}}"/>
             </div>
 
-            <input type="submit" value="Editar">           
+            <div class="inputCadastro">
+                <label>Validade:</label>
+                <input type="date" name="validadeEstoque" value="{{alocacao.dt_validade.isoformat}}"/>
+            </div>
+
+            <input type="submit" value="Desalocar">
 
         </div>
     </form>

@@ -60,6 +60,10 @@ function consultar(){
     location.href='consultar';
 }
 
+function inicio(){
+    location.href='inicio'
+}
+
 function menuPrincipal(){
     const menu_principal = document.getElementById('menu_principal');
     menu_principal.style.display='block';
@@ -70,7 +74,7 @@ function menuPrincipal(){
         <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
         <button class="button" onclick="desalocar()" style="vertical-align:middle" ><span> Desalocar</span></button>
         <button class="button" onclick="consultar()" style="vertical-align:middle" ><span>Consultar</span></button>
-        <button class="button" onclick="consultar()" style="vertical-align:middle" ><span>Atualizar </span></button>
+        <button class="button" onclick="inicio()" style="vertical-align:middle" ><span>Inicio </span></button>
     </nav>
     `;
 }

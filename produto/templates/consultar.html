@@ -20,23 +20,22 @@
             <th>Nome</th>
             <th>Código</th>
             <th>Lote</th>
-            <th>Local</th>
-            <th>Quantidade</th>
-            <th>Validade</th>
+            <th>Ativo</th>
         </tr>
         {% for produto in produtos %}
         <tr>
             <td>{{produto.nome_do_produto}}</td>
             <td>{{produto.codigo_de_barras}}</td>
             <td>{{produto.lote}}</td>
-            <td>{{produto.pratileira}}</td>
-            <td>{{produto.quantidade}}</td>
-            <td>{{produto.dt_validade}}</td>
+           {% if produto.ativo %}
+               <td>Ativo</td>
+            {% else %}
+               <td>Inativo</td>
+            {% endif %}
             <td><a href="editar/{{produto.codigo_de_barras}}">Editar</a></td>
         </tr>
         {% endfor %}
-    </table>    
-    </form>
+    </table>
     
 
 </body>
