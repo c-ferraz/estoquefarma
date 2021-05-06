@@ -6,7 +6,6 @@ import json
 from .models import Produto, Estoque
 
 # Create your views here.
-
 def login(request):
 
     response = {}
@@ -27,6 +26,20 @@ def inicio(request):
 def index(request):
     return render(request, 'index.html')
 
+def cadastro(request):
+    return render(request, 'cadastro.html')
+
+def alocar(request):
+    return render(request, 'alocar.html')
+
+def desalocar(request):
+    return render(request, 'desalocar.html')
+
+def consultar(request):
+    return render(request, 'consultar.html')
+
+def atualizar(request):
+    return render(request, 'atualizar.html')
 
 
 ###################################
@@ -41,11 +54,45 @@ def cadastrar_produto(request):
 
         produto.save()
 
-        return render(request, 'inicial.html')
+        contexto = {
+            'response': status.HTTP_201_CREATED
+        }
 
-def alocar(request):
+        return render(request, 'cadastro.html', contexto)
 
-    return render(request, 'alocar.html')
+def alocar_produto(request):
+    if (request.method == 'POST'):
+        alocar = Estoque()
+        try:
+            produto = Produto.objects.get(codigo_de_barras=request.POST.get('codBarraProduto'))
+        except:
+            contexto = {
+                'response': status.HTTP_500_INTERNAL_SERVER_ERROR,
+                'message': 'O produto informado não foi encontrado no banco de dados.'
+            }
+            return render(request, 'alocar.html', contexto)
+        alocar.codigo_de_barras = produto
+        alocar.pratileira = request.POST.get('localProduto')
+        alocar.quantidade = request.POST.get('quantidadeProduto')
+        alocar.dt_validade = request.POST.get('validadeProduto')
+
+        alocar.save()
+
+        contexto = {
+            'code': status.HTTP_201_CREATED
+        }
+    else:
+        contexto = {
+            'code': status.HTTP_400_BAD_REQUEST
+        }
+
+    return render(request, 'alocar.html', contexto)
+
+def consultar_produto(request):
+
+
+    pass
+
 
 def consultar_produto(request):
 

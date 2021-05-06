@@ -11,16 +11,9 @@
     </script>
     <title>ESTOQUEFARMA +</title>
 </head>
-<body class="bd">
+<body class="bd" onload="menuPrincipal()">
     <script src="{% static 'js/script.js' %}"></script>
-    <h1 class="top">ESTOQUEFARMA +</h1>
-    <nav class="navbar">
-    <button class="button" onclick="location.href='cadastro'" style="vertical-align:middle" ><span> Cadastrar  </span></button>
-    <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
-    <button class="button" style="vertical-align:middle" ><span> Desalocar</span></button>
-    <button class="button" style="vertical-align:middle" ><span>Consultar</span></button>
-    <button class="button" style="vertical-align:middle" ><span>Atualizar </span></button>
-    </nav>
+    <div id="menu_principal" style="display: none"></div>
 
     <table>
         <tr>

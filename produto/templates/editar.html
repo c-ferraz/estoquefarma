@@ -32,26 +32,26 @@
         <div class="inputCadastro">
 
             <div class="inputCadastro"></div>
-            <label>Nome:</label>
-            <input type="text" name="nomeProduto" value="{{produto.nome_do_produto}}"/>
+                <label>Nome:</label>
+                <input type="text" name="nomeProduto" value="{{produto.nome_do_produto}}"/>
             </div>
 
             <div class="inputCadastro">
-            <label>Codigo de Barra:</label>
-            <input type="text" name="codBarraProduto" value="{{produto.codigo_de_barras}}"/>
+                <label>Codigo de Barra:</label>
+                <input type="text" name="codBarraProduto" value="{{produto.codigo_de_barras}}"/>
             </div>
 
             <div class="inputCadastro">
-            <label>Lote:</label>
-            <input type="number" name="loteProduto" value="{{produto.lote}}"/>
+                <label>Lote:</label>
+                <input type="number" name="loteProduto" value="{{produto.lote}}"/>
             </div>
 
             <div class="inputCadastro">
             <label>Ativo:</label>
             {% if produto.ativo %}
-            <input type="checkbox" name="ativoProduto" checked/>
+                <input type="checkbox" name="ativoProduto" checked/>
             {% else %}
-            <input type="checkbox" name="ativoProduto"/>
+                <input type="checkbox" name="ativoProduto"/>
             {% endif %}
             </div>
 

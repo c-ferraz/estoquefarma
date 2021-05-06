@@ -38,8 +38,8 @@ class Estoque (models.Model):
     )
 
     dt_fabricacao = models.DateField(
-        blank=False,
-        null=False
+        blank=True,
+        null=True
     )
 
     dt_validade = models.DateField(

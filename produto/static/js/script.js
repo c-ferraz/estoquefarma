@@ -41,79 +41,39 @@ function login() {
 }
 
 function cadastrar(){
-    const conteudo = document.getElementById("conteudo");
-    conteudo.style.display='block';
-    conteudo.innerHTML=`
-    <form action="cadastrar_produto" method="POST">
-    <input type='hidden' id="csrfmiddlewaretoken" name='csrfmiddlewaretoken' value=""/>
-    <div class="inputCadastro" id="">
-    <label>Nome do Produto: </label>
-    <input type="text"  name="nomeProduto"/>
-    </div>
-    <div class="inputCadastro">
-    <label>Codigo de Barra: </label>
-    <input type="number"   name="codBarraProduto"/>
-    </div>
-    <div class="inputCadastro">
-    <label>Lote: </label>
-    <input type="number"   name="loteProduto"/>
-    </div>
-    <div class="inputCadastro">
-    <a href="inicial.html"><input type="submit" value="Cadastrar"/></a>
-    </div>
-    </form>
-    `;
-    document.getElementById("csrfmiddlewaretoken").value = csrftoken;
-    
-    
+    location.href='cadastro';
 }
-
 
 function alocar(){
-    const conteudo = document.getElementById("conteudo");
-    conteudo.style.display='block';
-    conteudo.innerHTML=`<form action="" method="POST">
-    <div class="inputCadastro" id="">
-    <label>Codigo de Barra: </label>
-    <input type="text"  name="nomeProduto"/>
-    </div>
-    <div class="inputCadastro">
-    <label>Local: </label>
-    <input type="number"   name="codBarraProduto"/>
-    </div>
-    <div class="inputCadastro">
-<label>Quantidade: </label>
-<input type="number"   name="loteProduto"/>
-</div>
-    <div class="inputCadastro">
-<label>Validade: </label>
-<input type="number"   name="loteProduto"/>
-</div>
-<div class="inputCadastro">
-<a href="inicial.html"><button type="button" >Alocar</button></a>
-</div>
-</form>
-`;
-}
-function desalocar(){
-    const conteudo = document.getElementById("conteudo");
-    conteudo.style.display='block';
-    conteudo.innerHTML=`<form action="" method="POST">
-    <div class="inputCadastro" id="">
-    <label>Codigo de Barra: </label>
-    <input type="text"  name="nomeProduto"/>
-    </div>
-    <div class="inputCadastro">
-    <label>Local: </label>
-    <input type="number"   name="codBarraProduto"/>
-   </div>
-   <div class="inputCadastro">
-<a href="inicial.html"><button type="button" >Desalocar</button></a>
-</div>
-</form>
-`;
+    location.href='alocar';
 }
 
+function desalocar(){
+    location.href='desalocar';
+}
+
+function atualizar(){
+    location.href='atualizar';
+}
+
+function consultar(){
+    location.href='consultar';
+}
+
+function menuPrincipal(){
+    const menu_principal = document.getElementById('menu_principal');
+    menu_principal.style.display='block';
+    menu_principal.innerHTML=`
+    <h1 class="top">ESTOQUEFARMA +</h1>
+    <nav class="navbar">
+        <button class="button" onclick="cadastrar()" style="vertical-align:middle" ><span> Cadastrar  </span></button>
+        <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
+        <button class="button" onclick="desalocar()" style="vertical-align:middle" ><span> Desalocar</span></button>
+        <button class="button" onclick="consultar()" style="vertical-align:middle" ><span>Consultar</span></button>
+        <button class="button" onclick="consultar()" style="vertical-align:middle" ><span>Atualizar </span></button>
+    </nav>
+    `;
+}
 /* #conteudo{
   background-color: chartreuse;
   width: 500px;
