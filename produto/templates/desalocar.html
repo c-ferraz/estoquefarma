@@ -1,8 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link href="{% static 'css/inicialstyle.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=7, initial-scale=1.0">
@@ -11,31 +13,37 @@
     </script>
     <title>ESTOQUEFARMA +</title>
 </head>
+
 <body class="bd" onload="menuPrincipal()">
     <script src="{% static 'js/script.js' %}"></script>
     <div id="menu_principal" style="display: none"></div>
 
-    <table>
-        <tr>
-            <th>Cod. Barras:</th>
-            <th>Nome:</th>
-            <th>Local:</th>
-            <th>Quantidade:</th>
-            <th>Validade:</th>
-        </tr>
-        {% for alocacao in estoque %}
-        <tr>
-            <td>{{alocacao.codigo_de_barras.codigo_de_barras}}</td>
-            <td>{{alocacao.codigo_de_barras.nome_do_produto}}</td>
-            <td>{{alocacao.pratileira}}</td>
-            <td>{{alocacao.quantidade}}</td>
-            <td>{{alocacao.dt_validade}}</td>
-            <td><a href="editar_estoque/{{alocacao.id}}">Editar</a></td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="tabela">
+        <table>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Local</th>
+                <th>Quantidade</th>
+                <th>Validade</th>
+                <th></th>
+
+            </tr>
+            {% for alocacao in estoque %}
+            <tr>
+                <td>{{alocacao.codigo_de_barras.codigo_de_barras}}</td>
+                <td>{{alocacao.codigo_de_barras.nome_do_produto}}</td>
+                <td>{{alocacao.pratileira}}</td>
+                <td>{{alocacao.quantidade}}</td>
+                <td>{{alocacao.dt_validade}}</td>
+                <td><a href="editar_estoque/{{alocacao.id}}" > <i class="fa fa-edit" ></i> </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
 
 
 </body>
-</html>
 
+</html>

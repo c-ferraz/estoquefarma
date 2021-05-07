@@ -1,54 +1,78 @@
-
-.bd{
-    background-image: url("https://www.revistaadnormas.com.br/uploads/2020/07/46_0008_66.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 0%;
-    pad: 0%;
+html {
+  font-family: 'Open Sans', sans-serif;
 }
-#conteudo{
+
+.bd {
+  background-image: url("https://www.revistaadnormas.com.br/uploads/2020/07/46_0008_66.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0%;
+  pad: 0%;
+
+
+
+}
+
+#conteudo {
   margin-top: 20px;
 }
 
-.top{
-    background-image: linear-gradient(to right,#ffffff, #148dff , #ffffff);
-    border-radius: 15px;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: cornsilk;
-    margin-left: 20px;
-    text-align: center;
+.top {
+  background-image: linear-gradient(to right, #ffffff, #148dff, #ffffff);
+  border-radius: 15px;
+  font-size: 40px;
+  color: cornsilk;
+  text-align: center;
+  padding: 20px;
 }
+
+.botao:hover {
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: #024873;
+  color: white;
+  transition: 0.5s;
+}
+
 #input1 {
-    margin-top: 40px;
-    background-color: #ffffff;
-    border-radius: 40px;
-    text-align: center;
-    height: 40px;
-    margin-left: 200px;
-    width: 250px;
-   }
-   #input2 {
-    background-color: #ffffff;
-    border-radius: 40px;
-    text-align: center;
-    height: 40px;
-    margin-left: 200px;
-    width: 250px;
-   }
-   #button1{
-    border-radius: 30px;
-    background-color: #F6F5FA;
-    color: #8485A3;
-    margin-left:210px;
-    height: 40px;
-    width: 100px;
+  margin-top: 40px;
+  background-color: #ffffff;
+  border-radius: 40px;
+  text-align: center;
+  height: 40px;
+  margin-left: 200px;
+  width: 250px;
 }
-.cadastrar{
-    margin-left: 210px;
+
+#input2 {
+  background-color: #ffffff;
+  border-radius: 40px;
+  text-align: center;
+  height: 40px;
+  margin-left: 200px;
+  width: 250px;
 }
-.navbar{
-  background-color: #048ABF;
+
+#button1 {
+  border-radius: 30px;
+  background-color: #F6F5FA;
+  color: #8485A3;
+  margin-left: 210px;
+  height: 40px;
+  width: 100px;
+}
+
+.cadastrar {
+  margin-left: 210px;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, #ffffff, #148dff, #ffffff);
+  border-radius: 15px;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornsilk;
+  text-align: center;
   height: 50px;
   display: flex;
   align-items: center;
@@ -58,7 +82,7 @@
 .button {
   display: inline-block;
   border-radius: 10px;
-  background-color:#024873;
+  background-color: #024873;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -70,13 +94,12 @@
 }
 
 .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s;
+}
 
-  }
-  
 .button span:after {
   content: '\00bb';
   position: absolute;
@@ -84,10 +107,17 @@
   top: 0;
   right: -100px;
   transition: 0.5s;
+
+}
+
+.button:hover {
+  background-color: white;
+  transition: 0.5s;
 }
 
 .button:hover span {
   padding-right: 25px;
+  color: #024873;
 }
 
 .button:hover span:after {
@@ -95,53 +125,60 @@
   right: 0;
 }
 
-form > div { 
+form>div {
   margin-bottom: 10px;
 
 }
 
-#conteudo{
-
-  font-family: Arial, Helvetica, sans-serif;
-  background-color:rgb(190, 207, 253);
+#conteudo {
+  
+  background-color: #8ac4ff;
   width: 500px;
   height: 100%;
   margin: 20px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 25px 5px #000000; 
+  -webkit-box-shadow: 5px 5px 25px 5px #000000;
   box-shadow: 5px 5px 25px 5px #000000;
 }
 
-input{
-  border-radius: 30px;
-}
-
-button{
+button {
   border-radius: 30px;
 }
 
 table {
   background-color: rgb(190, 207, 253);
-  -webkit-box-shadow: 5px 5px 25px 5px #000000; 
+  -webkit-box-shadow: 5px 5px 25px 5px #000000;
   box-shadow: 5px 5px 25px 5px #000000;
   margin: 20px 0 0 20px;
-  width: 100%;
+  width: 50%;
   border-collapse: collapse;
-  
 }
 
-table, td, th {
-  text-align: left;
+table,
+td,
+th {
+  text-align: center;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
+table tr:nth-child(even) {
+  background-color: #66b3ff;
+}
 
+table tr:nth-child(odd) {
+  background-color: #8ac4ff;
+}
 
+.tabela {
+  display: flex;
+  justify-content: center;
+
+}
 

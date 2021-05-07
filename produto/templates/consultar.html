@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <link href="{% static 'css/inicialstyle.css' %}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=7, initial-scale=1.0">
@@ -14,14 +15,16 @@
 </head>
 <body class="bd" onload="menuPrincipal()">
     <script src="{% static 'js/script.js' %}"></script>
-    <div id="menu_principal" style="display: none"></div>
-
-    <table>
+    <div id="menu_principal"></div>
+    <div class="tabela">
+ <table>
         <tr>
             <th>Nome</th>
             <th>Código</th>
             <th>Lote</th>
             <th>Ativo</th>
+             <th></th>
+            <th></th>
         </tr>
         {% for produto in produtos %}
         <tr>
@@ -33,11 +36,13 @@
             {% else %}
                <td>Inativo</td>
             {% endif %}
-            <td><a href="editar/{{produto.codigo_de_barras}}">Editar</a></td>
-            <td><a href="deletar_produto/{{ produto.codigo_de_barras }}">Deletar</a></td>
+            <td><a href="editar/{{produto.codigo_de_barras}}"><i class="fa fa-edit"></i></a></td>
+            <td><a href="deletar_produto/{{ produto.codigo_de_barras }}"><i class="fa fa-trash" style="color: red;"></i></a></td>
         </tr>
         {% endfor %}
     </table>
+    </div>
+   
     
 
 </body>

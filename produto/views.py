@@ -160,7 +160,7 @@ def desalocar_produto(request):
         validade = request.POST.get('validadeEstoque')
         estoque_id = request.POST.get('estoque_id')
 
-        if (quantidade <= 0):
+        if (int(quantidade) <= 0):
             pass
 
         estoque = Estoque.objects.filter(id=estoque_id)
