@@ -160,7 +160,16 @@ def desalocar_produto(request):
         validade = request.POST.get('validadeEstoque')
         estoque_id = request.POST.get('estoque_id')
 
+        if (quantidade <= 0):
+            pass
+
         estoque = Estoque.objects.filter(id=estoque_id)
         estoque.update(pratileira=local, quantidade=quantidade, dt_validade=validade)
 
     return HttpResponseRedirect('/produto/desalocar')
+
+def deletar_produto(request, product_id):
+
+    Produto.objects.filter(codigo_de_barras=product_id).delete()
+    #return render(request, 'consultar.html')
+    return HttpResponseRedirect('/produto/consultar')

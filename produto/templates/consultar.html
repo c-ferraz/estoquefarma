@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=7, initial-scale=1.0">
     <script>
-        var csrftoken = '{{ csrf_token }}'
+        var objTeste = {{ lista_produtos | safe}}
+        console.log(objTeste[0][1])
     </script>
     <title>ESTOQUEFARMA +</title>
 </head>
@@ -33,6 +34,7 @@
                <td>Inativo</td>
             {% endif %}
             <td><a href="editar/{{produto.codigo_de_barras}}">Editar</a></td>
+            <td><a href="deletar_produto/{{ produto.codigo_de_barras }}">Deletar</a></td>
         </tr>
         {% endfor %}
     </table>

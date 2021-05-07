@@ -15,11 +15,11 @@
     <script src="{% static 'js/script.js' %}"></script>
     <h1 class="top">ESTOQUEFARMA +</h1>
     <nav class="navbar">
-    <button class="button" onclick="location.href='http://{{request.get_host}}/produto/cadastro'" style="vertical-align:middle" ><span> Cadastrar  </span></button>
-    <button class="button" onclick="location.href='http://{{request.get_host}}/produto/alocar'" style="vertical-align:middle" ><span> Alocar</span></button>
-    <button class="button" onclick="location.href='http://{{request.get_host}}/produto/desalocar'" style="vertical-align:middle" ><span> Desalocar</span></button>
-    <button class="button" onclick="location.href='http://{{request.get_host}}/produto/consultar'" style="vertical-align:middle" ><span>Consultar</span></button>
-    <button class="button" onclick="location.href='http://{{request.get_host}}/produto/inicio'" style="vertical-align:middle" ><span>Inicio </span></button>
+        <button class="button" onclick="location.href='http://{{request.get_host}}/produto/inicio'" style="vertical-align:middle" ><span>Home </span></button>
+        <button class="button" onclick="location.href='http://{{request.get_host}}/produto/cadastro'" style="vertical-align:middle" ><span> Cadastrar  </span></button>
+        <button class="button" onclick="location.href='http://{{request.get_host}}/produto/alocar'" style="vertical-align:middle" ><span> Alocar</span></button>
+        <button class="button" onclick="location.href='http://{{request.get_host}}/produto/desalocar'" style="vertical-align:middle" ><span> Desalocar</span></button>
+        <button class="button" onclick="location.href='http://{{request.get_host}}/produto/consultar'" style="vertical-align:middle" ><span>Consultar</span></button>
     </nav>
 
 {% for produto in produtos %}

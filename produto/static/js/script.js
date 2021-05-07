@@ -70,11 +70,11 @@ function menuPrincipal(){
     menu_principal.innerHTML=`
     <h1 class="top">ESTOQUEFARMA +</h1>
     <nav class="navbar">
+        <button class="button" onclick="inicio()" style="vertical-align:middle" ><span>Home </span></button>
         <button class="button" onclick="cadastrar()" style="vertical-align:middle" ><span> Cadastrar  </span></button>
         <button class="button" onclick="alocar()" style="vertical-align:middle" ><span> Alocar</span></button>
         <button class="button" onclick="desalocar()" style="vertical-align:middle" ><span> Desalocar</span></button>
         <button class="button" onclick="consultar()" style="vertical-align:middle" ><span>Consultar</span></button>
-        <button class="button" onclick="inicio()" style="vertical-align:middle" ><span>Inicio </span></button>
     </nav>
     `;
 }
